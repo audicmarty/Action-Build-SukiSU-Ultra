@@ -6,7 +6,7 @@ on:
         type: choice
         description: "配置文件"
         required: true
-        default: oneplus_ace2_v
+        default: oneplus_13_global
         options:
           - oneplus_nord_ce4_lite_5g_v
           - oneplus_nord_ce4_v
@@ -51,7 +51,7 @@ on:
         type: choice
         description: "下载SUSFS模块调用方式"
         required: true
-        default: NoN
+        default: CI
         options:
           - CI
           - Release
@@ -70,7 +70,7 @@ on:
         type: string
         description: "自定义内核后缀 (不输入使用随机字符串)"
         required: false
-        default: ""
+        default: "OP13-OPT"
       FAST_BUILD:
         type: boolean
         description: "是否启用极速构建？"
@@ -80,17 +80,17 @@ on:
         type: boolean
         description: "是否启用内核层面阻止对关键分区/设备节点的非法写入(LSM)？"
         required: true
-        default: false
+        default: true
       SCHED:
         type: boolean
         description: "是否添加风驰驱动？"
         required: true
-        default: false
+        default: true
       ZRAM:
         type: boolean
         description: "是否添加更多ZRAM算法？"
         required: true
-        default: false
+        default: true
 
 jobs:
   build:
